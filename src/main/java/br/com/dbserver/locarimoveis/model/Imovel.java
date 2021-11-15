@@ -11,12 +11,10 @@ import br.com.dbserver.locarimoveis.model.enums.StatusImovel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 @Entity
 @Table(name = "IMOVEIS")
 @Getter
-@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Imovel extends EntidadeBase {
