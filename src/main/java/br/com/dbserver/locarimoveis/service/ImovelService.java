@@ -1,8 +1,10 @@
 package br.com.dbserver.locarimoveis.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
+import br.com.dbserver.locarimoveis.model.Imovel;
 import br.com.dbserver.locarimoveis.model.dto.ImovelDTO;
 import br.com.dbserver.locarimoveis.model.enums.StatusImovel;
 import br.com.dbserver.locarimoveis.repositorie.ImovelRepository;
@@ -22,5 +24,10 @@ public class ImovelService {
                 .stream()
                 .map(imovel -> ImovelToDTOConverter.getInstance().apply(imovel))
                 .collect(Collectors.toList());
+    }
+
+    public Optional<Imovel> buscarImovelPorId(Long id) {
+
+        return imovelRepository.findById(id);
     }
 }
